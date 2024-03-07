@@ -8,3 +8,4 @@ urlpatterns = [
     path('tes/', include('about.urls', namespace='about')),
 ]
 
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
