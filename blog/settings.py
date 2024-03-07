@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-3s$#uwi-^j4!vf&xz*_1tlx%-o2!pr%#u%(6-_a=3xtjqu!p5+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app','.now.sh']
 
 
 # Application definition
@@ -120,18 +120,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 
+# STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, "static"),
+# STATICFILES_DIRS = os.path.join(BASE_DIR,"staticfiles_build"),
+
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "staticfiles_build"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-STORAGES = {
-    
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
