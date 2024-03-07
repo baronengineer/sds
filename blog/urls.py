@@ -6,3 +6,4 @@ urlpatterns = [
     path('',Dashboard.as_view(template_name = 'index.html'),name='land'),
     path('tes/', include('about.urls', namespace='about')),
 ]
+
