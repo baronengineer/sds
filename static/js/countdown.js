@@ -42,3 +42,32 @@ simplyCountdown('.simply-countdown',{
         
       });
     
+      window.addEventListener('DOMContentLoaded', function () {
+        var linkElements = document.querySelectorAll('.gallery .col a');
+        
+        // Fungsi untuk mengganti href pada link sesuai dengan lebar layar
+        function updateHref() {
+          for (var i = 1; i <= linkElements.length; i++) {
+            var linkElement = linkElements[i];
+            if (linkElement) {
+              if (window.innerWidth <= 767) {
+                linkElement.href = `https://picsum.photos/id/${i + 100}/400/200`;
+              } else {
+                linkElement.href = `https://picsum.photos/id/${i + 100}/1200/768`;
+              }
+            }
+          }
+          
+          // Khusus untuk elemen ke-5
+          if (window.innerWidth <= 767) {
+            linkElements[5].href = 'https://picsum.photos/id/106/400/200';
+          } else {
+            linkElements[5].href = 'https://picsum.photos/id/106/1200/768';
+          }
+        }
+    
+        // Panggil fungsi saat halaman dimuat dan ukuran layar berubah
+        updateHref();
+        window.addEventListener('resize', updateHref);
+      });
+    
