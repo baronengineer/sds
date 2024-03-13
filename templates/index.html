@@ -1,5 +1,28 @@
-{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include "snippets/styles.html" %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:ital,wght@0,100;0,400;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <title>My brother wedding</title>
+</head>
+<body>
+  <section id="hero" class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
+      <main>
+          <h4>Kepada<span> ,</span></h4>
+          <h1> Ade chandra & Khairina</h1>
+          <p>Aakan melangsungkan resepsi pernikahan dalam:</p>
+          <div class="simply-countdown">
 
-{% block link %}
-  <a href="{% url 'about:tes'  %}">term</a>
-{% endblock link %}
+          </div>
+          <a href="{% url 'about:tes'  %}" class="btn btn-lg mt-4" >lihat undangan</a>
+      </main>
+  </section>
+  {% include "snippets/js.html" %}
+</body>
+</html>
